@@ -104,8 +104,7 @@ class CommentPostMixin(CommentBaseMixin):
                 url = self.object.get_absolute_url()
             except AttributeError:
                 raise ImproperlyConfigured("No URL to redirect to. Please provide 'postcomment_success_url' or define a get_absolute_url on the Model")
-        # provide comment url as anchor.
-        return f'{url}#{self.postcomment_object.id}'
+        return url
 
     def postcomment_form_valid(self, form):
         self.postcomment_object = form.save(commit=False)
