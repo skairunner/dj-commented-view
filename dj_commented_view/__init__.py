@@ -67,6 +67,14 @@ class CommentPostMixin(CommentBaseMixin):
     postcomment_fields = None
     postcomment_object = None
 
+    def post(self, request, *args, **kwargs):
+        form = self.get_postcomment_form()
+        self.object = self.get_object()
+        if form.is_valid():
+            return self.postcomment_form_valid(form)
+        else:
+            return self.postcomment_form_invalid(form)
+
     def get_postcomment_initial(self):
         return self.postcommentinitial.copy()
 
