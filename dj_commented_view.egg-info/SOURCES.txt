@@ -1,7 +1,0 @@
-README.md
-setup.py
-dj-commented-view/__init__.py
-dj_commented_view.egg-info/PKG-INFO
-dj_commented_view.egg-info/SOURCES.txt
-dj_commented_view.egg-info/dependency_links.txt
-dj_commented_view.egg-info/top_level.txt
